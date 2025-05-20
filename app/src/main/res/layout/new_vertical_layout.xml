@@ -27,6 +27,24 @@
         android:gravity="bottom|right"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TV5"
+            android:background="#D5B538"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TV6"
+            android:background="#7122CC"/>
+    </LinearLayout>
+
     <TextView
         android:layout_width="100dp"
         android:layout_height="50dp"
