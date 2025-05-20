@@ -3,6 +3,7 @@ package com.example.testapplication1;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,9 +25,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    int ClickCount;
     public void BtnClick1(View V)
     {
-        Log.v("","Button1 Click");
+        Log.v("TA1","Button1 Click");
+
+        TextView textView1 = findViewById(R.id.NumberText);
+        textView1.setText(Integer.toString(++ClickCount));
     }
 }
