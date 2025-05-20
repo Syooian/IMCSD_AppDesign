@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestApplication1</string>
+    <string name="text_underline"><u>Underline</u></string>
+
 </resources>
