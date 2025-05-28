@@ -3,6 +3,7 @@ package com.example.testapplication1;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //EdgeToEdge.enable(this);//是否顯示上方的狀態列
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.editor_layout);
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
 //            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -32,5 +33,16 @@ public class MainActivity extends AppCompatActivity {
 
         TextView textView1 = findViewById(R.id.NumberText);
         textView1.setText(Integer.toString(++ClickCount));
+    }
+
+
+    public void GoClick(View V)
+    {
+        EditText editText = findViewById(R.id.editTextTextMultiLine);
+
+        TextView textView = findViewById(R.id.textView3);
+        textView.setText(editText.getText().toString());
+
+        Log.v("TA1","GoClick : "+editText.getText().toString());
     }
 }
