@@ -10,7 +10,13 @@
             </corners>
 
             <!--背景顏色-->
-            <solid android:color="#2B57D9" />
+            <!--<solid android:color="#2B57D9" />-->
+
+            <!--背景漸層-->
+            <gradient
+                android:angle="270"
+                android:endColor="#2B57D9"
+                android:startColor="#FFFFFF" />
         </shape>
     </item>
 </selector>
