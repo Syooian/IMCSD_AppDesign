@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <!-- 圓角 -->
+            <corners android:radius="10dp" />
+
+            <!-- 背景顏色 -->
+            <solid android:color="#18903C" />
+
+            <!-- 邊框 -->
+            <stroke android:width="2dp" android:color="#000000" />
+        </shape>
+
+
+    </item>
+</selector>

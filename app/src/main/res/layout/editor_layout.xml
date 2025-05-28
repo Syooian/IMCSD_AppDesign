@@ -13,6 +13,8 @@
         android:gravity="center"
         android:hint="請輸入文字"
         android:inputType="textMultiLine"
+        android:background="@drawable/edittext_background"
+        android:layout_margin="20dp"
         android:textSize="20sp" />
 
     <Button
