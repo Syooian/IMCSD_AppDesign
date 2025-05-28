@@ -29,7 +29,9 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:onClick="GoClick"
-            android:text="Go" />
+            android:text="Go"
+            android:textStyle="bold"
+            android:typeface="serif" />
 
         <Button
             android:id="@+id/Btn_Clean"
