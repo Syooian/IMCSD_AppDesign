@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 按下狀態 -->
+    <item
+        android:state_pressed="true"
+        android:color="@color/white" />
+    <!-- 一般狀態 -->
+    <item
+        android:color="#AD1C1C"/>
+</selector>
