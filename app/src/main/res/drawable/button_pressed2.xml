@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--按下狀態-->
+    <!--在 <selector> 裡，只有最後一個 <item> 可以不加狀態（state），否則後面的 <item> 都會被忽略。
+        因為沒有狀態的 <item> 會匹配所有情況，導致後面的 <item android:state_pressed="true"> 永遠不會被用到。-->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#B90EEF" />
+        </shape>
+    </item>
+
+    <item>
+        <!--容器-->
+        <shape>
+            <!--圓角-->
+            <corners android:bottomLeftRadius="10dp" android:bottomRightRadius="10dp"/>
+
+            <!--背景顏色-->
+            <!--<solid android:color="#2B57D9" />-->
+
+            <!--背景漸層-->
+            <gradient android:angle="270" android:endColor="#2B57D9" android:startColor="#FFFFFF" />
+
+            <!--邊框-->
+            <!--dashGap:虛線每一段「實線」的長度-->
+            <!--dashWidth:虛線每一段「空白」的間隔長度-->
+            <stroke android:width="2dp" android:color="#000000" android:dashWidth="10dp" android:dashGap="5dp" />
+
+            <!--設定 shape 內部內容與邊界之間的間距。-->
+            <padding android:bottom="20dp" />
+        </shape>
+    </item>
+</selector>

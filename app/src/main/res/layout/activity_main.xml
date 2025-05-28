@@ -61,17 +61,19 @@
         android:id="@+id/button3A"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_layout"
+        android:background="@drawable/button_selector"
         android:text="Button3A"
         app:layout_constraintEnd_toStartOf="@id/button3B"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NumberText" />
+        app:layout_constraintTop_toBottomOf="@+id/NumberText"
+
+        />
 
     <Button
         android:id="@+id/button3B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_layout"
+        android:background="@drawable/button_selector"
         android:text="Button3B"
         app:layout_constraintStart_toEndOf="@+id/button3A"
         app:layout_constraintEnd_toStartOf="@id/button3C"
@@ -81,7 +83,7 @@
         android:id="@+id/button3C"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_layout"
+        android:background="@drawable/button_pressed2"
         android:text="Button3C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button3B"
