@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape>
+            <!-- 背景顏色 -->
+            <solid android:color="#2AFF67" />
+        </shape>
+    </item>
     <item>
         <shape>
             <!-- 圓角 -->
@@ -11,7 +17,5 @@
             <!-- 邊框 -->
             <stroke android:width="2dp" android:color="#000000" />
         </shape>
-
-
     </item>
 </selector>
