@@ -26,6 +26,10 @@
                 android:color="#000000"
                 android:dashGap="5dp"
                 android:dashWidth="10dp"/>
+
+            <!--設定 shape 內部內容與邊界之間的間距。-->
+            <padding
+                android:bottom="20dp"/>
         </shape>
     </item>
 </selector>
