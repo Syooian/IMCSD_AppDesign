@@ -63,8 +63,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_layout"
         android:text="Button3A"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintEnd_toStartOf="@id/button3B"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NumberText" />
 
@@ -74,8 +73,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_layout"
         android:text="Button3B"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/button3A"
+        app:layout_constraintStart_toEndOf="@+id/button3A"
+        app:layout_constraintEnd_toStartOf="@id/button3C"
         app:layout_constraintTop_toBottomOf="@+id/NumberText" />
 
     <Button
@@ -85,9 +84,6 @@
         android:background="@drawable/button_layout"
         android:text="Button3C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintRight_toRightOf="parent"
-
         app:layout_constraintStart_toEndOf="@+id/button3B"
         app:layout_constraintTop_toBottomOf="@+id/NumberText" />
 
