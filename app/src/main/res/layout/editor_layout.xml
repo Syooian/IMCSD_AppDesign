@@ -20,6 +20,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <CheckedTextView
+            android:id="@+id/Check1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="true"
+            android:gravity="center"
+            android:text="CheckedTextView1" />
+
+        <CheckedTextView
+            android:id="@+id/Check2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:checked="false"
+            android:gravity="center"
+            android:text="CheckedTextView2" />
+        <CheckBox
+            android:id="@+id/Check3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checked3"/>
+        <CheckBox
+            android:id="@+id/Check4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checked4"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
 

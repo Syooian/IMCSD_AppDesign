@@ -3,6 +3,8 @@ package com.example.testapplication1;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -39,9 +41,15 @@ public class MainActivity extends AppCompatActivity {
     public void GoClick(View V) {
         EditText editText = GetEditText();
 
-        GetTextView().setText(editText.getText().toString());
+        var Value=editText.getText().toString()+"\n"+
+                ((CheckedTextView)findViewById(R.id.Check1)).isChecked()+"\n"+
+                ((CheckedTextView)findViewById(R.id.Check2)).isChecked()+"\n"+
+                ((CheckBox)findViewById(R.id.Check3)).isChecked()+"\n"+
+                ((CheckBox)findViewById(R.id.Check4)).isChecked();
 
-        Log.v("TA1", "GoClick : " + editText.getText().toString());
+        GetTextView().setText(Value);
+
+        Log.v("TA1", "GoClick : " + Value);
     }
 
     public void Clean(View V) {
