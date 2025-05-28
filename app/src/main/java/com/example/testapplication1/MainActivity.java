@@ -27,22 +27,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     int ClickCount;
-    public void BtnClick1(View V)
-    {
-        Log.v("TA1","Button1 Click");
+
+    public void BtnClick1(View V) {
+        Log.v("TA1", "Button1 Click");
 
         TextView textView1 = findViewById(R.id.NumberText);
         textView1.setText(Integer.toString(++ClickCount));
     }
 
+    //===========================================================editor_layout
+    public void GoClick(View V) {
+        EditText editText = GetEditText();
 
-    public void GoClick(View V)
-    {
-        EditText editText = findViewById(R.id.editTextTextMultiLine);
+        GetTextView().setText(editText.getText().toString());
 
-        TextView textView = findViewById(R.id.textView3);
-        textView.setText(editText.getText().toString());
-
-        Log.v("TA1","GoClick : "+editText.getText().toString());
+        Log.v("TA1", "GoClick : " + editText.getText().toString());
     }
+
+    public void Clean(View V) {
+        GetEditText().setText("");
+        GetTextView().setText("");
+    }
+
+    TextView GetTextView() {
+        return findViewById(R.id.textView3);
+    }
+
+    EditText GetEditText() {
+        return findViewById(R.id.editTextTextMultiLine);
+    }
+    //===========================================================editor_layout
 }
