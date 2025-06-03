@@ -16,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    CheckedTextView CheckedTextView2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +28,19 @@ public class MainActivity extends AppCompatActivity {
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
 //            return insets;
 //        });
+
+        try {
+            CheckedTextView2 = findViewById(R.id.Check2);
+            CheckedTextView2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CheckedTextView2.toggle();
+                }
+            });
+        }
+        catch (Exception e) {
+
+        }
     }
 
     int ClickCount;

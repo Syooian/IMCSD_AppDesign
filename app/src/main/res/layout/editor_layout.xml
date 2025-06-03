@@ -36,7 +36,7 @@
             android:id="@+id/Check2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+            android:drawableLeft="?android:attr/listChoiceIndicatorSingle"
             android:checked="false"
             android:gravity="center"
             android:text="CheckedTextView2" />
