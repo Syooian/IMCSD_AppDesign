@@ -15,25 +15,26 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButton1_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton1" />
+            android:text="Radio1" />
 
         <RadioButton
             android:id="@+id/radioButton1_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton2" />
+            android:text="Radio2" />
 
         <RadioButton
             android:id="@+id/radioButton1_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton3" />
+            android:text="Radio3" />
     </RadioGroup>
 
     <TextView
