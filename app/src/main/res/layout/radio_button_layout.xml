@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select an option:"
+        android:text="Option1:"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold" />
@@ -18,22 +18,55 @@
         android:layout_height="wrap_content" >
 
         <RadioButton
-            android:id="@+id/radioButton1"
+            android:id="@+id/radioButton1_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RadioButton1" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButton1_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RadioButton2" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButton1_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RadioButton3" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Option2:"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radioButton2_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton1" />
+
+        <RadioButton
+            android:id="@+id/radioButton2_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton2"
+            android:button="@drawable/check_selector"/>
+
+        <RadioButton
+            android:id="@+id/radioButton2_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton3"
+            android:button="@drawable/checkbox"/>
     </RadioGroup>
 
 </LinearLayout>
