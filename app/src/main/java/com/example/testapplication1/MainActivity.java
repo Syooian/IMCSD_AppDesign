@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //EdgeToEdge.enable(this);//是否顯示上方的狀態列
-        setContentView(R.layout.editor_layout);
+        setContentView(R.layout.radio_button_layout);
 //        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
 //            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 //            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
         try {
+            //搭配editor_layout.xml使用
+
             CheckedTextView2 = findViewById(R.id.Check2);
             CheckedTextView2.setOnClickListener(new View.OnClickListener() {
                 @Override
