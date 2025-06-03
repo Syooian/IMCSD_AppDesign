@@ -51,6 +51,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Checked4"/>
+
+        <CheckBox
+            android:id="@+id/Check5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/check_selector"
+            android:text="Checked5" />
     </LinearLayout>
 
 
