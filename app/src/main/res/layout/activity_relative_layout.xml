@@ -11,11 +11,37 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"/>
 
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button 02"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView01"
+        android:gravity="center"
+        android:text="TextView02" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/TextView01"
-        android:text="The Text View"
+        android:text="TextView01"
+        android:layout_centerInParent="true"
         android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextView03"
+        android:text="TextView03"
+        android:layout_above="@id/TextView01"
+        android:gravity="center"/>
+
 
 </RelativeLayout>
