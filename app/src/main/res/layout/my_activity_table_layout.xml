@@ -30,4 +30,16 @@
             android:text="TX2-3"
             android:layout_margin="5dp"/>
     </TableRow>
+    <TableRow>
+        <TextView
+            android:text="TX3-1"
+            android:layout_margin="5dp"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/picture01"/>
+        <TextView
+            android:text="TX3-3"
+            android:layout_margin="5dp"/>
+    </TableRow>
 </TableLayout>
