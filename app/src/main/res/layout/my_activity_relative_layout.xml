@@ -84,4 +84,22 @@
         android:layout_toEndOf="@+id/TextView07A"
         android:layout_alignBaseline="@id/TextView07A"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextView08"
+        android:text="TextView08"
+        android:textSize="25dp"
+        android:layout_below="@+id/TextView07A"/>
+
+    <EditText
+        android:id="@+id/EditTextText01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/TextView08"
+        android:layout_toEndOf="@id/TextView08"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
 </RelativeLayout>
