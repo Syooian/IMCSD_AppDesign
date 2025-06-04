@@ -21,14 +21,14 @@
 
     <TextView
         android:id="@+id/TextView02"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/TextView01"
         android:gravity="center"
         android:text="TextView02" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/TextView01"
         android:text="TextView01"
@@ -36,12 +36,34 @@
         android:gravity="center"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/TextView03"
         android:text="TextView03"
         android:layout_above="@id/TextView01"
         android:gravity="center"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextView04"
+        android:text="TextView04"
+        android:layout_toLeftOf="@id/TextView01"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextView05"
+        android:text="TextView05"
+        android:layout_toRightOf="@id/TextView01"
+        android:layout_alignBottom="@id/TextView01"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TextView06"
+        android:text="TextView06"
+        android:layout_alignEnd="@id/TextView01"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
