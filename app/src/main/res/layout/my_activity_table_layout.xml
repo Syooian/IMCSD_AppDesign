@@ -42,4 +42,20 @@
             android:text="TX3-3"
             android:layout_margin="5dp"/>
     </TableRow>
+    <TableRow
+        android:background="@color/black">
+        <TextView
+            android:text="TX4-1"
+            android:layout_margin="1dp"
+            android:background="@color/white"/>
+        <TextView
+            android:text="TX4-2"
+            android:gravity="center"
+            android:layout_margin="1dp"
+            android:background="@color/white"/>
+        <TextView
+            android:text="TX3-3"
+            android:layout_margin="1dp"
+            android:background="@color/white"/>
+    </TableRow>
 </TableLayout>
