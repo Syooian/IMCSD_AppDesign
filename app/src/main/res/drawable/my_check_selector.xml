@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:drawable="@drawable/check_1_layer"
+        android:drawable="@drawable/my_check_1_layer"
         android:state_checked="true"/>
     <item
-        android:drawable="@drawable/check_2_layer"/>
+        android:drawable="@drawable/my_check_2_layer"/>
 </selector>

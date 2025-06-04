@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        android:background="@drawable/edittext_background"
+        android:background="@drawable/my_edittext_background"
         android:ems="10"
         android:gravity="center"
         android:hint="請輸入文字"
@@ -56,7 +56,7 @@
             android:id="@+id/Check5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:button="@drawable/check_selector"
+            android:button="@drawable/my_check_selector"
             android:text="Checked5" />
     </LinearLayout>
 

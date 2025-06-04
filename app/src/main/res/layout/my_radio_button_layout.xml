@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RadioButton2"
-            android:button="@drawable/check_selector"/>
+            android:button="@drawable/my_check_selector"/>
 
         <RadioButton
             android:id="@+id/radioButton2_3"

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="一號按鈕"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button_02"
+        android:textAllCaps="false"
+        android:background="#9F72ED"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="15dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按鈕3號"
+        android:backgroundTint="#E2AD5E"
+        />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="按鈕004號"
+        android:background="@drawable/button_blue"
+        android:textColor="#460FA8"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按鈕5號"
+        android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:background="@drawable/button_pressed"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="按鈕6號"
+        android:layout_margin="5dp"
+        android:textSize="16sp"
+        android:background="@drawable/button_text_pressed_white"
+        />
+</LinearLayout>

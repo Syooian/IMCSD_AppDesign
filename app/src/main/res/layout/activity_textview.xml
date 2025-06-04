@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="165dp"
+            android:layout_height="40dp"
+            android:text="一"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:background="#FBEE72"
+            />
+
+        <TextView
+            android:layout_width="165dp"
+            android:layout_height="40dp"
+            android:text="二"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            />
+
+    </LinearLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Textview元件練習"
+        android:background="#F68686"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Textview\n元件二"
+        android:background="#5277FF"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:text="第三組textview文字練習"
+        android:gravity="bottom|right"
+        android:background="#97F66B"
+        android:textColor="#FA0707"
+        android:textStyle="italic"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_symble"
+        android:layout_gravity="right"
+        android:background="#3AE4ED"
+        />
+
+</LinearLayout>
+

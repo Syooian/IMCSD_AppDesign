@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1.喜歡的休閒活動 : "
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_margin="5dp"
+        />
+
+    <CheckedTextView
+        android:id="@+id/checkTextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="做運動"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:checkMark="?android:attr/listChoiceIndicatorSingle"
+        />
+
+    <CheckedTextView
+        android:id="@+id/checkTextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="逛街"
+        android:textSize="12sp"
+        android:layout_marginLeft="16dp"
+        android:gravity="center_vertical"
+        android:drawableLeft="?android:attr/listChoiceIndicatorMultiple"
+        />
+
+</LinearLayout>
