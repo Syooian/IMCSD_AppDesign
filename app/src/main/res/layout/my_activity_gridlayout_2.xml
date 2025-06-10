@@ -23,6 +23,9 @@
         android:layout_columnWeight="1"
         android:text="Button 4" />
 
+    <Space
+        android:layout_columnWeight="1" />
+
     <Button
         android:layout_columnWeight="1"
         android:text="Button 5" />
