@@ -2,7 +2,16 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:foreground="@drawable/logo"
-    android:foregroundGravity="center">
+    android:background="@drawable/logo1"
+    android:foreground="@drawable/logo2"
+    android:foregroundGravity="bottom|right">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ASDASDASD"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"/>
 
 </FrameLayout>
