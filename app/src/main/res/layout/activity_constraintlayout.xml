@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_cancel_01"
+        android:text="取消"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_next_01"
+        android:text="下一步"
+        app:layout_constraintLeft_toRightOf="@id/button_cancel_01"
+        app:layout_constraintBottom_toBottomOf="@id/button_cancel_01"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_back_01"
+        android:text="上一步"
+        app:layout_constraintLeft_toRightOf="@id/button_cancel_01"
+        app:layout_constraintBottom_toTopOf="@id/button_next_01"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_left_up_01"
+        android:text="左上"
+        app:layout_constraintRight_toLeftOf="@id/button_back_01"
+        app:layout_constraintBottom_toTopOf="@id/button_next_01"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_right_up_01"
+        android:text="右上"
+        app:layout_constraintLeft_toRightOf="@id/button_back_01"
+        app:layout_constraintBottom_toTopOf="@id/button_next_01"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_center_01"
+        android:text="置中按鈕"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_center_up30"
+        android:text="中上30%"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_center_left_up20"
+        android:text="左上20%"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintVertical_bias="0.2"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_center_right_down75"
+        android:text="右下75%"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.75"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_h_01"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="10dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_v_01"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_h_02"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="5dp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline_v_02"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="5dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_guideline"
+        android:text="參考線定位"
+        app:layout_constraintRight_toLeftOf="@id/guideline_v_02"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_h_02"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview_id"
+        android:text="帳號 : "
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/guideline_h_01"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_v_01"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittext_id"
+        android:text=""
+        android:hint="請輸入帳號"
+        android:textColorHint="#F24444"
+        android:textSize="16sp"
+        android:ems="14"
+        app:layout_constraintLeft_toRightOf="@id/textview_id"
+        app:layout_constraintBaseline_toBaselineOf="@id/textview_id"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview_password"
+        android:text="密碼 : "
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textview_id"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_v_01"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittext_password"
+        android:text=""
+        android:hint="請輸入密碼"
+        android:textColorHint="#F24444"
+        android:textSize="16sp"
+        android:ems="14"
+        app:layout_constraintLeft_toRightOf="@id/textview_password"
+        app:layout_constraintBaseline_toBaselineOf="@id/textview_password"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
