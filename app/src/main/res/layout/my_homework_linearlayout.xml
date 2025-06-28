@@ -58,14 +58,17 @@
             android:id="@+id/Tv_Account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:text="帳號 : "
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/EditAccount"
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:text="請輸入帳號"
+            android:hint="請輸入帳號"
+            android:textColorHint="#AAAAAA"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -80,14 +83,17 @@
             android:id="@+id/Tv_Password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:text="密碼 : "
+            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/EditPassword"
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:text="請輸入密碼"
+            android:hint="請輸入密碼"
+            android:textColorHint="#AAAAAA"
             android:textSize="18sp" />
     </LinearLayout>
 
