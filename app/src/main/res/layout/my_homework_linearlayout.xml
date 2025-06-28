@@ -59,13 +59,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="帳號 : "
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/EditAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="請輸入帳號" />
+            android:text="請輸入帳號"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -80,13 +81,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="密碼 : "
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/EditPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="請輸入密碼" />
+            android:text="請輸入密碼"
+            android:textSize="18sp" />
     </LinearLayout>
 
 
@@ -102,19 +104,22 @@
             android:id="@+id/RadioButton_Student"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="學生" />
+            android:text="學生"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/RadioButton_Teacher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="教師" />
+            android:text="教師"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/RadioButton_Staff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="職工" />
+            android:text="職工"
+            android:textSize="18sp" />
     </RadioGroup>
 
     <!--按鈕-->
@@ -129,13 +134,15 @@
             android:id="@+id/Btn_Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="登入" />
+            android:text="登入"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/Btn_Register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="註冊" />
+            android:text="註冊"
+            android:textSize="18sp" />
     </LinearLayout>
 
 </LinearLayout>
