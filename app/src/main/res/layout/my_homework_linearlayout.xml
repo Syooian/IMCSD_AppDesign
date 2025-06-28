@@ -23,30 +23,6 @@
         android:scaleType="fitXY"
         app:srcCompat="@drawable/s__44204039_0" />
 
-    <!--
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textview_password"
-        android:text="密碼 : "
-        android:textSize="16sp"
-        android:layout_below="@id/button_05"
-        android:layout_alignParentLeft="true"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/edittext_password"
-        android:text=""
-        android:hint="請輸入密碼"
-        android:textColorHint="#F23C3C"
-        android:textSize="16sp"
-        android:layout_toRightOf="@id/textview_password"
-        android:layout_alignBaseline="@id/textview_password"
-        />
-    -->
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -138,20 +114,20 @@
 
         <Button
             android:id="@+id/Btn_Login"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
-            android:background="#6100EC"
+            android:background="@drawable/my_homework_button"
             android:text="登入"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
         <Button
             android:id="@+id/Btn_Register"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:background="#6100EC"
+            android:background="@drawable/my_homework_button"
             android:text="註冊"
             android:textColor="@color/white"
             android:textSize="18sp" />
