@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="系統登入畫面"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="240dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/s__44204039_0" />
+
+    <!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview_password"
+        android:text="密碼 : "
+        android:textSize="16sp"
+        android:layout_below="@id/button_05"
+        android:layout_alignParentLeft="true"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edittext_password"
+        android:text=""
+        android:hint="請輸入密碼"
+        android:textColorHint="#F23C3C"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/textview_password"
+        android:layout_alignBaseline="@id/textview_password"
+        />
+    -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Tv_Account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="帳號 : "
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/EditAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="請輸入帳號" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Tv_Password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密碼 : "
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/EditPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="請輸入密碼" />
+    </LinearLayout>
+
+
+    <!--使用者身分選擇-->
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/RadioButton_Student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="學生" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="教師" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Staff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="職工" />
+    </RadioGroup>
+
+    <!--按鈕-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Btn_Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登入" />
+
+        <Button
+            android:id="@+id/Btn_Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="註冊" />
+    </LinearLayout>
+
+</LinearLayout>
