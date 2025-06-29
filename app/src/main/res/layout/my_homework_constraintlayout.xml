@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--標題-->
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="系統登入畫面"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--圖片-->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="240dp"
+        android:layout_height="160dp"
+        android:layout_below="@id/Title"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Title"
+        app:srcCompat="@drawable/s__44204039_0" />
+
+    <!--帳號文字-->
+    <TextView
+        android:id="@+id/Tv_Account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="帳號 : "
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/EditAccount"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <!--帳號輸入框-->
+    <EditText
+        android:id="@+id/EditAccount"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Tv_Account"
+        android:layout_toEndOf="@+id/Tv_Account"
+        android:hint="請輸入帳號"
+        android:textColorHint="#AAAAAA"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/Tv_Account"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+    <!--密碼文字-->
+    <TextView
+        android:id="@+id/Tv_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="密碼 : "
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/EditPassword"
+        app:layout_constraintTop_toBottomOf="@id/Tv_Account" />
+
+    <!--密碼輸入框-->
+    <EditText
+        android:id="@+id/EditPassword"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Tv_Password"
+        android:layout_marginStart="20dp"
+        android:hint="請輸入密碼"
+        android:textColorHint="#AAAAAA"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/Tv_Password"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/EditAccount" />
+
+    <!--使用者身分選擇-->
+    <RadioGroup
+        android:id="@+id/RadioGroupMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/EditPassword">
+
+        <RadioButton
+            android:id="@+id/RadioButton_Student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="學生"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="教師"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/RadioButton_Staff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="職工"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ButtonGuideLineH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="390dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ButtonGuideLineVL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="65dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/ButtonGuideLineVR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="65dp" />
+
+    <!--登入按鈕-->
+    <Button
+        android:id="@+id/Btn_Login"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/my_homework_button"
+        android:text="登入"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@id/ButtonGuideLineVL"
+        app:layout_constraintTop_toBottomOf="@id/ButtonGuideLineH" />
+
+    <!--註冊按鈕-->
+    <Button
+        android:id="@+id/Btn_Register"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RadioGroupMain"
+        android:background="@drawable/my_homework_button"
+        android:text="註冊"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintRight_toRightOf="@id/ButtonGuideLineVR"
+        app:layout_constraintTop_toBottomOf="@id/ButtonGuideLineH" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
