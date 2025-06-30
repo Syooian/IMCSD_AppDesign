@@ -49,14 +49,13 @@
         android:id="@+id/EditAccount"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Tv_Account"
         android:layout_toEndOf="@+id/Tv_Account"
         android:hint="請輸入帳號"
         android:textColorHint="#AAAAAA"
         android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Tv_Account"
         app:layout_constraintLeft_toRightOf="@id/Tv_Account"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <!--密碼文字-->
     <TextView
@@ -76,14 +75,12 @@
         android:id="@+id/EditPassword"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Tv_Password"
-        android:layout_marginStart="20dp"
         android:hint="請輸入密碼"
         android:textColorHint="#AAAAAA"
         android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Tv_Password"
         app:layout_constraintLeft_toRightOf="@id/Tv_Password"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/EditAccount" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <!--使用者身分選擇-->
     <RadioGroup
