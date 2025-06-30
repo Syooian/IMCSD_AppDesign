@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:text="帳號 : "
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -63,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:text="密碼 : "
         android:textColor="@color/black"
         android:textSize="18sp"
@@ -138,7 +140,7 @@
     <!--登入按鈕-->
     <Button
         android:id="@+id/Btn_Login"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/my_homework_button"
         android:text="登入"
@@ -150,7 +152,7 @@
     <!--註冊按鈕-->
     <Button
         android:id="@+id/Btn_Register"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/RadioGroupMain"
         android:background="@drawable/my_homework_button"

@@ -117,7 +117,7 @@
     <!--登入按鈕-->
     <Button
         android:id="@+id/Btn_Login"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -132,7 +132,7 @@
     <!--註冊按鈕-->
     <Button
         android:id="@+id/Btn_Register"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/RadioGroupMain"
         android:layout_alignParentTop="true"
