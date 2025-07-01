@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:text="系統登入畫面"
+        android:text="@string/text_homework_title"
         android:textSize="24sp" />
 
     <ImageView
@@ -44,7 +44,7 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:hint="請輸入帳號"
-            android:textColorHint="#AAAAAA"
+            android:textColorHint="@color/HomeworkTextColorHint"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -69,10 +69,9 @@
             android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:hint="請輸入密碼"
-            android:textColorHint="#AAAAAA"
+            android:textColorHint="@color/HomeworkTextColorHint"
             android:textSize="18sp" />
     </LinearLayout>
-
 
     <!--使用者身分選擇-->
     <RadioGroup
@@ -116,7 +115,7 @@
             android:id="@+id/Btn_Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="10dp"
             android:background="@drawable/my_homework_button"
             android:text="登入"
             android:textColor="@color/white"
@@ -126,7 +125,7 @@
             android:id="@+id/Btn_Register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             android:background="@drawable/my_homework_button"
             android:text="註冊"
             android:textColor="@color/white"

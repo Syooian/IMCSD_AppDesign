@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+>
 
     <!--標題-->
     <TextView
@@ -14,7 +14,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
-        android:text="系統登入畫面"
+        android:text="@string/text_homework_title"
         android:textSize="24sp" />
 
     <!--圖片-->
@@ -23,11 +23,8 @@
         android:layout_width="240dp"
         android:layout_height="160dp"
         android:layout_below="@id/Title"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
         android:gravity="center_horizontal"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/s__44204039_0" />
@@ -49,12 +46,11 @@
         android:id="@+id/EditAccount"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
+
         android:layout_alignBaseline="@+id/Tv_Account"
-        android:layout_marginStart="20dp"
         android:layout_toEndOf="@+id/Tv_Account"
         android:hint="請輸入帳號"
-        android:textColorHint="#AAAAAA"
+        android:textColorHint="@color/HomeworkTextColorHint"
         android:textSize="18sp" />
 
     <!--密碼文字-->
@@ -74,12 +70,11 @@
         android:id="@+id/EditPassword"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/EditAccount"
+
         android:layout_alignBaseline="@+id/Tv_Password"
-        android:layout_marginStart="20dp"
         android:layout_toEndOf="@id/Tv_Password"
         android:hint="請輸入密碼"
-        android:textColorHint="#AAAAAA"
+        android:textColorHint="@color/HomeworkTextColorHint"
         android:textSize="18sp" />
 
     <!--使用者身分選擇-->
@@ -122,8 +117,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="65dp"
-        android:layout_marginTop="390dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginTop="410dp"
         android:background="@drawable/my_homework_button"
         android:text="登入"
         android:textColor="@color/white"
@@ -137,7 +131,7 @@
         android:layout_below="@id/RadioGroupMain"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="410dp"
         android:layout_marginEnd="65dp"
         android:background="@drawable/my_homework_button"
         android:text="註冊"

@@ -2,4 +2,5 @@
     <string name="app_name">TestApplication1</string>
     <string name="text_underline"><u>Underline</u></string>
     <string name="text_symble"></string>
+    <string name="text_homework_title">高屏澎東分署登入畫面</string>
 </resources>
