@@ -5,10 +5,12 @@
 # 快捷鍵
 - 格式化(對齊)：Ctrl + Alt + L
 
-# 作業
+# 作業一
 * drawable/my_homework_button
+* drawable/s__44204039_0.jpg
 * layout/my_homework_linearlayout  
-作業1："登入鈕上邊界距離容器390dp、左邊界距離容器65dp"，要求不合理
 * layout/my_homework_relativelayout
-作業2："登入鈕上邊界距離容器390dp、左邊界距離容器65dp"，要求不合理
 * layout/my_homework_constraintlayout
+* values/colors.xml
+* values/strings.xml
+* values/themes.xml
