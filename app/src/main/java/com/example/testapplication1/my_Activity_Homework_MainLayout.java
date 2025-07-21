@@ -1,5 +1,6 @@
 package com.example.testapplication1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,7 @@ public class my_Activity_Homework_MainLayout extends AppCompatActivity {
         Btn_Constraint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GoTo("my_Activity_Homework_ConstraintLayout");
+                GoTo("my_Activity_Homework_ConstraintLayout", 999);
             }
         });
 
@@ -32,7 +33,7 @@ public class my_Activity_Homework_MainLayout extends AppCompatActivity {
         Btn_Linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GoTo("my_Activity_Homework_LinearLayout");
+                GoTo("my_Activity_Homework_LinearLayout", null);
             }
         });
 
@@ -40,16 +41,22 @@ public class my_Activity_Homework_MainLayout extends AppCompatActivity {
         Btn_Relative.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GoTo("my_Activity_Homework_RelativeLayout");
+                GoTo("my_Activity_Homework_RelativeLayout", null);
             }
         });
     }
 
 
-    public void GoTo(String ActivityName) {
+    public void GoTo(String ActivityName, Integer Number) {
         try {
             Class<?> cls = Class.forName("com.example.testapplication1." + ActivityName);
-            startActivity(new android.content.Intent(this, cls));
+
+            Intent Intent = new Intent(this, cls);
+
+            if (Number != null)
+                Intent.putExtra("Number", Number);
+
+            startActivity(Intent);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
