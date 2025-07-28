@@ -7,6 +7,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class my_Activity_Homework_MainLayout extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +56,14 @@ public class my_Activity_Homework_MainLayout extends AppCompatActivity {
 
             Intent Intent = new Intent(this, cls);
 
+            Bundle Bundle = new Bundle();
+            SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Bundle.putString("DateStr", SDF.format(new Date()));
+
             if (Number != null)
                 Intent.putExtra("Number", Number);
+
+            Intent.putExtras(Bundle);
 
             startActivity(Intent);
         } catch (ClassNotFoundException e) {

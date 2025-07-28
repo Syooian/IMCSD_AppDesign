@@ -22,8 +22,13 @@ public class my_Activity_Homework_ConstraintLayout extends AppCompatActivity {
         //取得Intent傳來的值
         int Number = getIntent().getIntExtra("Number", 0);
 
+        Bundle Bundle = getIntent().getExtras();
+
         //修改文字
         TextView TitleTextView = findViewById(R.id.TitleTextView);
-        TitleTextView.setText(TitleTextView.getText() + "\n" + Number);
+        TitleTextView.setText(
+                TitleTextView.getText() + "\n" +
+                        Number + "\n" +
+                        Bundle.getString("DateStr"));
     }
 }
