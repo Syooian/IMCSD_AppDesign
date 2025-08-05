@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview_question01"
+        android:text="1.本學期教學活動方法 :"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox_answer_01"
+        android:text="實務經驗分享"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox_answer_02"
+        android:text="實習操作"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox_answer_03"
+        android:text="課堂講授"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkbox_answer_04"
+        android:text="校外參訪"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        />
+
+</LinearLayout>
