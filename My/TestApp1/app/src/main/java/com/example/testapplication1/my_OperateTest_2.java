@@ -36,6 +36,8 @@ public class my_OperateTest_2 extends AppCompatActivity {
 
         Bundle Bundle = new Bundle();
         SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Log.v("Log", "DateStr: " + SDF.format(new Date()));
+
         Bundle.putString("DateStr", SDF.format(new Date()));
         Intent.putExtras(Bundle);
 
