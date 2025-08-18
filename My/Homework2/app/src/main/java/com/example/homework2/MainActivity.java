@@ -150,11 +150,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             runOnUiThread(() -> {
-                ArrayAdapter<HashMap<String, String>> Adapter = new ArrayAdapter<>(
-                        this,
-                        android.R.layout.simple_list_item_1,
-                        ArrayList
-                );
+                StationAdapter Adapter = new StationAdapter(this, ArrayList);
 
                 DataList.setAdapter(Adapter);
             });
@@ -179,16 +175,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /*class StationAdapter extends ArrayAdapter<Map<String, String>> {
-        public StationAdapter(Context Context, List<Map<String, String>> Stations) {
+    class StationAdapter extends ArrayAdapter<HashMap<String, String>> {
+        public StationAdapter(Context Context, ArrayList<HashMap<String, String>> Stations) {
             super(Context, android.R.layout.simple_list_item_1, Stations);
         }
 
         @Override
         public View getView(int Position, View ConvertView, ViewGroup Parent) {
-            Map<String, String> Station = getItem(Position);
+            if (ConvertView == null) {
+                ConvertView = View.inflate(getContext(), android.R.layout.simple_list_item_1, null);
+            }
+
+            HashMap<String, String> Station = getItem(Position);
+            String Text = Station.get("車站編號") + "\n" +
+                    Station.get("車站中文名稱") + "\n" +
+                    Station.get("車站緯度") + ":" + Station.get("車站經度");
+            ((android.widget.TextView) ConvertView.findViewById(android.R.id.text1)).setText(Text);
+            return ConvertView;
         }
-    }*/
+    }
 }
 
 class Station {
