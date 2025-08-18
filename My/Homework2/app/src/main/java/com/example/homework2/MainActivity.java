@@ -1,8 +1,10 @@
 package com.example.homework2;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -12,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.android.volley.toolbox.JsonObjectRequest;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -35,10 +39,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ProgressBar = findViewById(R.id.ProgressBar);
+        DataList = findViewById(R.id.DataList);
     }
 
     //進度條
     ProgressBar ProgressBar;
+    //資料顯示
+    ListView DataList;
 
     //進度條開關, 顯示進度
     void ShowProgressBar(Boolean OnOff, Float Value) {
@@ -46,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar.setVisibility(OnOff ? View.VISIBLE : View.INVISIBLE);
 
         if (Value != null) {
-            Log.v(TAG,"SetProgress : "+Value);
+            Log.v(TAG, "SetProgress : " + Value);
 
             ProgressBar.setProgress(Value.intValue(), true);
         }
@@ -55,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
     //取WebAPI資料
     public void GetData(View View) {
         ShowProgressBar(true, 0f);
+
+        //清空已顯示的資料
 
         new Thread(() -> {
             try {
@@ -71,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     String Line;
                     int Read = 0;
 
-                    Log.d(TAG,"Total : "+Total);
+                    Log.d(TAG, "Total : " + Total);
 
                     while ((Line = Reader.readLine()) != null) {
                         Builder.append(Line);
@@ -86,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     Reader.close();
                     Log.v(TAG, "取資料成功 : " + Builder.toString());
+
+                    ShowData(Builder.toString());
                 } else {
                     Log.e(TAG, "取資料失敗 Code : " + ResponseCode);
                 }
@@ -96,5 +107,10 @@ public class MainActivity extends AppCompatActivity {
 
             runOnUiThread(() -> ShowProgressBar(false, null));
         }).start();
+    }
+
+
+    void ShowData(String Data) {
+
     }
 }

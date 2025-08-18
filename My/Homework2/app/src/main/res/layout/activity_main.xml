@@ -18,14 +18,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
+        android:id="@+id/ProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ProgressBar"
-        app:layout_constraintTop_toBottomOf="@id/Btn_GetData"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:progress="0"
         android:max="100"
+        android:progress="0"
         android:visibility="invisible"
-        />
+        app:layout_constraintTop_toBottomOf="@id/Btn_GetData" />
+
+    <ListView
+        android:id="@+id/DataList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ProgressBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
