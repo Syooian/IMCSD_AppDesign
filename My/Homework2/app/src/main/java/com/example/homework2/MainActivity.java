@@ -2,8 +2,10 @@ package com.example.homework2;
 
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -16,6 +18,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -64,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         ShowProgressBar(true, 0f);
 
         //清空已顯示的資料
+        DataList.setAdapter(null);
 
         new Thread(() -> {
             try {
@@ -111,6 +117,27 @@ public class MainActivity extends AppCompatActivity {
 
 
     void ShowData(String Data) {
+        //JsonObjectRequest Request=new JsonObjectRequest()
 
+        //JsonReader Reader=new JsonReader(Data);
+
+        try {
+            JSONObject Json = new JSONObject(Data);
+
+            /*ArrayAdapter<String>Adapter=new ArrayAdapter<>(
+                    this,
+                    android.R.layout.simple_list_item_1,
+                    DataList // 假設 "data" 是 JSON 中的數組
+            );*/
+
+            JSONArray DataArray = Json.getJSONArray("data");
+
+            for (int a = 0; a < DataArray.length(); a++) {
+                JSONObject Item = DataArray.getJSONObject(a);
+                Log.v(TAG, Item.toString());
+            }
+        } catch (Exception E) {
+            Log.e(TAG, "ShowDataError : " + E.getMessage());
+        }
     }
 }
