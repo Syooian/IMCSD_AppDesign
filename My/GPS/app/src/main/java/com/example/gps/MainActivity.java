@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     }
 
     public void SetGPS(View view) {
-
+        startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
     }
 
     @Override
