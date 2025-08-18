@@ -131,6 +131,9 @@ public class MainActivity extends AppCompatActivity {
                     Reader.close();
                     //Log.v(TAG, "取資料成功 : " + Builder.toString());
 
+                    runOnUiThread(() -> ShowProgressBar(true, 100f));
+                    Thread.sleep(1000); // 模擬延遲，實際應用中可根據需要調整
+
                     ToastMessage[0] = "取資料成功";
 
                     ShowData(Builder.toString());
