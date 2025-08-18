@@ -153,6 +153,15 @@ public class MainActivity extends AppCompatActivity {
                 StationAdapter Adapter = new StationAdapter(this, ArrayList);
 
                 DataList.setAdapter(Adapter);
+
+                //設定點下物件後開啟地圖
+                DataList.setOnItemClickListener((Parent, View, Position, ID) -> {
+                    HashMap<String, String> Station = ArrayList.get(Position);
+                    String Title = Station.get("車站中文名稱");
+                    double Lat = Double.parseDouble(Station.get("車站緯度"));
+                    double Lng = Double.parseDouble(Station.get("車站經度"));
+                    ShowMap(Title, Lat, Lng);
+                });
             });
         } catch (Exception E) {
             Log.e(TAG, "ShowDataError : " + E.getMessage());
