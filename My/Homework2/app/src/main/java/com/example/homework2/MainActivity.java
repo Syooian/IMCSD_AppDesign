@@ -102,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 URL URL = new URL(API_URL);
                 HttpURLConnection Connection = (HttpURLConnection) URL.openConnection();
                 Connection.setRequestMethod("GET");
+                Connection.setConnectTimeout(5000); // 設定連線超時時間為 5 秒
+                Connection.setReadTimeout(10000); // 設定讀取超時時間為 10 秒
                 Connection.connect();
 
                 int ResponseCode = Connection.getResponseCode();
@@ -123,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
                     Log.e(TAG, "取資料失敗 Code : " + ResponseCode);
                     ToastMessage[0] = "取資料失敗";
                 }
+
+                if (Connection != null) {
+                    Log.v(TAG,"斷開連線");
+                    Connection.disconnect();
+                }
             } catch (UnknownHostException E) {
                 Sleep(1000);//模擬延遲
 
@@ -130,9 +137,6 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(() -> Toast.makeText(this, "取資料失敗，將使用本地暫存資料，並請檢察網路連線。", Toast.LENGTH_SHORT).show());
 
                 Sleep(1000);//模擬延遲
-
-                //在正常連線下，此時把裝置調成飛航模式，在刷資料時，會卡住，原因待查
-                //此時再刷一次就正常
 
                 ToastMessage[0] = LoadLocalData();
 
