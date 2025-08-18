@@ -1,10 +1,14 @@
 package com.example.homework2;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -27,6 +31,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -125,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             JSONObject Json = new JSONObject(Data);
 
-            ArrayList<String> ArrayList = new ArrayList<>();
+            ArrayList<HashMap<String, String>> ArrayList = new ArrayList<>();
 
             JSONArray DataArray = Json.getJSONArray("data");
 
@@ -133,14 +138,19 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject Item = DataArray.getJSONObject(a);
                 //Log.v(TAG, Item.toString());
 
-                ArrayList.add(
-                    Item.optString("車站編號") + "\n" +
-                    Item.optString("車站中文名稱") + "\n" +
-                    Item.optString("車站緯度") + ":" + Item.optString("車站經度"));
+                //將資料放入Dic
+                HashMap<String, String> Station = new HashMap<String, String>();
+                Station.put("車站編號", Item.optString("車站編號"));
+                Station.put("車站中文名稱", Item.optString("車站中文名稱"));
+                Station.put("車站緯度", Item.optString("車站緯度"));
+                Station.put("車站經度", Item.optString("車站經度"));
+
+                //將Dic放入ArrayList
+                ArrayList.add(Station);
             }
 
             runOnUiThread(() -> {
-                ArrayAdapter<String> Adapter = new ArrayAdapter<>(
+                ArrayAdapter<HashMap<String, String>> Adapter = new ArrayAdapter<>(
                         this,
                         android.R.layout.simple_list_item_1,
                         ArrayList
@@ -152,4 +162,40 @@ public class MainActivity extends AppCompatActivity {
             Log.e(TAG, "ShowDataError : " + E.getMessage());
         }
     }
+
+    void ShowMap(String Title, double Lat, double Lng) {
+        try {
+            var GeoString = "geo:" + Lat + "," + Lng;
+            var QueryString = Lat + "," + Lng + "(" + Title + ")";
+            var UriString = Uri.encode(QueryString);
+            GeoString += "?q=" + UriString;
+
+            //開啟地圖
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(GeoString)));
+        } catch (Exception E) {
+            Log.e(TAG, "ShowMapError : " + E.getMessage());
+            Toast.makeText(this, "顯示地圖失敗", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    /*class StationAdapter extends ArrayAdapter<Map<String, String>> {
+        public StationAdapter(Context Context, List<Map<String, String>> Stations) {
+            super(Context, android.R.layout.simple_list_item_1, Stations);
+        }
+
+        @Override
+        public View getView(int Position, View ConvertView, ViewGroup Parent) {
+            Map<String, String> Station = getItem(Position);
+        }
+    }*/
+}
+
+class Station {
+    public int seq;
+    public String 車站編號;
+    public String 車站中文名稱;
+    public String 車站英文名稱;
+    public String 車站緯度;
+    public String 車站經度;
 }
