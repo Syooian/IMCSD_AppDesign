@@ -8,6 +8,16 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/Btn_CheckGPSPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="CheckGPSPermission"
+        android:text="檢查GPS權限"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/Btn_SetGPS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,7 +25,7 @@
         android:text="設定GPS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/Btn_CheckGPSPermission" />
 
     <TextView
         android:id="@+id/Txt_GPSInfoTitle"

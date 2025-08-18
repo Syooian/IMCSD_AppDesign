@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         return Result;
     }
 
-    void CheckPermission() {
+    public void CheckGPSPermission(View View) {
         ArrayList<String> Permissions = new ArrayList<>();
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -181,20 +181,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     }
 
     public void SetGPS(View view) {
-        //if (CheckGPSProviderStatus()) {
-            /*Location Location = LM.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
-            String Info;
-            if (Location != null) {
-                Info = "緯度: " + Location.getLatitude() + "\n經度: " + Location.getLongitude();
-            } else {
-                Info = "無法獲取GPS資訊";
-            }
-
-            SetGPSInfo(Info);*/
-        //} else {
-
-        CheckPermission();
     }
 
     @Override
@@ -202,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 1) {
             for (int a = 0; a < permissions.length; a++) {
-                switch (grantResults[a]){
+                switch (grantResults[a]) {
                     case PackageManager.PERMISSION_GRANTED:
                         Log.v(TAG, "權限 " + permissions[a] + " 已授予");
                         //Toast.makeText(this, "權限已授予: " + permissions[a], Toast.LENGTH_SHORT).show();
@@ -252,7 +239,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         try {
             //抓取GPS資訊
-            Log.v(TAG,"抓取GPS");
+            Log.v(TAG, "抓取GPS");
             LM.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 1, this);
         } catch (SecurityException E) {
             Log.e(TAG, "onResume SecurityException : " + E.getMessage());
@@ -270,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         try {
             //停止抓取GPS資訊
-            Log.v(TAG,"暫停GPS");
+            Log.v(TAG, "暫停GPS");
             LM.removeUpdates(this);
         } catch (SecurityException E) {
             Log.e(TAG, "onPause SecurityException : " + E.getMessage());
