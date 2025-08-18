@@ -33,10 +33,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        ProgressBar = findViewById(R.id.ProgressBar);
     }
 
     //進度條
-    ProgressBar ProgressBar = findViewById(R.id.ProgressBar);
+    ProgressBar ProgressBar;
 
     //進度條開關, 顯示進度
     void ShowProgressBar(Boolean OnOff, Float Value) {
@@ -44,12 +46,16 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar.setVisibility(OnOff ? View.VISIBLE : View.INVISIBLE);
 
         if (Value != null) {
+            Log.v(TAG,"SetProgress : "+Value);
+
             ProgressBar.setProgress(Value.intValue(), true);
         }
     }
 
     //取WebAPI資料
     public void GetData(View View) {
+        ShowProgressBar(true, 0f);
+
         new Thread(() -> {
             try {
                 URL URL = new URL(API_URL);
@@ -59,11 +65,24 @@ public class MainActivity extends AppCompatActivity {
 
                 int ResponseCode = Connection.getResponseCode();
                 if (ResponseCode == HttpURLConnection.HTTP_OK) {
+                    int Total = Connection.getContentLength();
                     BufferedReader Reader = new BufferedReader(new InputStreamReader(Connection.getInputStream()));
                     StringBuffer Builder = new StringBuffer();
                     String Line;
+                    int Read = 0;
+
+                    Log.d(TAG,"Total : "+Total);
+
                     while ((Line = Reader.readLine()) != null) {
                         Builder.append(Line);
+                        Read += Line.length();
+
+                        if (Total > 0) {
+                            float Progress = (Read * 100f) / Total;
+                            runOnUiThread(() -> ShowProgressBar(true, Progress));
+                        }
+
+                        Thread.sleep(1000); // 模擬延遲，實際應用中可根據需要調整
                     }
                     Reader.close();
                     Log.v(TAG, "取資料成功 : " + Builder.toString());
@@ -75,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "取資料失敗", Toast.LENGTH_SHORT).show();
             }
 
-            ShowProgressBar(false, null);
+            runOnUiThread(() -> ShowProgressBar(false, null));
         }).start();
     }
 }
