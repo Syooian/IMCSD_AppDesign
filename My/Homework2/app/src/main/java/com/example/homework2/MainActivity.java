@@ -33,6 +33,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 public class MainActivity extends AppCompatActivity {
 
     final String TAG = "WebAPI";
@@ -52,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar = findViewById(R.id.ProgressBar);
         Loading = findViewById(R.id.Loading);
         DataList = findViewById(R.id.DataList);
+
+        SwipeRefresh = findViewById(R.id.SwipeRefresh);
+        SwipeRefresh.setOnRefreshListener(() -> {
+            Log.d(TAG, "下滑更新");
+
+            GetData(null);
+            SwipeRefresh.setRefreshing(false); // 停止刷新動畫
+        });
     }
 
     //進度條
@@ -60,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar Loading;
     //資料顯示
     ListView DataList;
+    //下滑更新
+    SwipeRefreshLayout SwipeRefresh;
 
     //進度條開關, 顯示進度
     void ShowProgressBar(Boolean OnOff, Float Value) {
@@ -77,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
 
     //取WebAPI資料
     public void GetData(View View) {
+        Toast.makeText(this, "正在取得資料...", Toast.LENGTH_SHORT).show();
+
         ShowProgressBar(true, 0f);
 
         //清空已顯示的資料
@@ -113,7 +127,11 @@ public class MainActivity extends AppCompatActivity {
                     Reader.close();
                     Log.v(TAG, "取資料成功 : " + Builder.toString());
 
+                    runOnUiThread(() -> Toast.makeText(this, "取資料成功", Toast.LENGTH_SHORT).show());
+
                     ShowData(Builder.toString());
+
+                    //SwipeRefresh.setRefreshing(false); // 停止刷新動畫
                 } else {
                     Log.e(TAG, "取資料失敗 Code : " + ResponseCode);
                 }
