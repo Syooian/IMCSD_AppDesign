@@ -50,11 +50,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ProgressBar = findViewById(R.id.ProgressBar);
+        Loading = findViewById(R.id.Loading);
         DataList = findViewById(R.id.DataList);
     }
 
     //進度條
     ProgressBar ProgressBar;
+    //讀取圈
+    ProgressBar Loading;
     //資料顯示
     ListView DataList;
 
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
     void ShowProgressBar(Boolean OnOff, Float Value) {
         //物件開關
         ProgressBar.setVisibility(OnOff ? View.VISIBLE : View.INVISIBLE);
+        //讀取圈
+        Loading.setVisibility(OnOff ? View.VISIBLE : View.INVISIBLE);
 
         if (Value != null) {
             Log.v(TAG, "SetProgress : " + Value);
