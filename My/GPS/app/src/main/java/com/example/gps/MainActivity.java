@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
     final String TAG = "com.example.gps";
 
+    Location CurrentLocation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -216,6 +218,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     public void onLocationChanged(Location Location) {
         double lat, lng;
 
+        CurrentLocation = Location;
+
         if (Location != null) {
             lat = Location.getLatitude();
             lng = Location.getLongitude();
@@ -223,6 +227,31 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             SetGPSInfo("緯度: " + lat + "\n經度: " + lng);
         } else {
 
+        }
+    }
+
+    //顯示地圖
+    public void ShowMap(View View) {
+        if (CurrentLocation != null) {
+            try {
+                var GeoString = "geo:" + CurrentLocation.getLatitude() + "," + CurrentLocation.getLongitude();
+                //Log.v(TAG, "GeoString : " + GeoString);
+                var QueryString = CurrentLocation.getLatitude() + "," + CurrentLocation.getLongitude() + "(" + "目前位置" + ")";
+                //Log.v(TAG, "QueryString : " + QueryString);
+                var UriString = Uri.encode(QueryString);
+                //Log.v(TAG, "UriString : " + UriString);
+                GeoString += "?q=" + UriString;
+                //Log.v(TAG, "GeoString : " + GeoString);
+
+                //開啟地圖
+                Intent GeoIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(GeoString));
+                startActivity(GeoIntent);
+            } catch (Exception E) {
+                Log.e(TAG, "ShowMap Exception: " + E.getMessage());
+                Toast.makeText(this, "無法開啟地圖", Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this, "無法使用，CurrentLocation為null", Toast.LENGTH_SHORT).show();
         }
     }
 

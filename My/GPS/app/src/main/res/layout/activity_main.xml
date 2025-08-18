@@ -27,6 +27,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Btn_CheckGPSPermission" />
 
+    <Button
+        android:id="@+id/Btn_ShowMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ShowMap"
+        android:text="啟動地圖顯示當前位置"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Btn_SetGPS" />
+
     <TextView
         android:id="@+id/Txt_GPSInfoTitle"
         android:layout_width="wrap_content"
@@ -35,7 +45,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Btn_SetGPS" />
+        app:layout_constraintTop_toBottomOf="@id/Btn_ShowMap" />
 
     <TextView
         android:id="@+id/Txt_GPSInfo"
