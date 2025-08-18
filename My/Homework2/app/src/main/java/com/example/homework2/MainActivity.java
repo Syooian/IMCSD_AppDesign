@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.util.JsonReader;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,21 +13,20 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.android.volley.toolbox.JsonObjectRequest;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -126,13 +123,13 @@ public class MainActivity extends AppCompatActivity {
                             runOnUiThread(() -> ShowProgressBar(true, Progress));
                         }
 
-                        Thread.sleep(1000); // 模擬延遲，實際應用中可根據需要調整
+                        Sleep(1000);//模擬延遲
                     }
                     Reader.close();
                     //Log.v(TAG, "取資料成功 : " + Builder.toString());
 
                     runOnUiThread(() -> ShowProgressBar(true, 100f));
-                    Thread.sleep(1000); // 模擬延遲，實際應用中可根據需要調整
+                    Sleep(1000);//模擬延遲
 
                     ToastMessage[0] = "取資料成功";
 
@@ -143,6 +140,17 @@ public class MainActivity extends AppCompatActivity {
                     Log.e(TAG, "取資料失敗 Code : " + ResponseCode);
                     ToastMessage[0] = "取資料失敗";
                 }
+            } catch (UnknownHostException E) {
+                Sleep(1000);//模擬延遲
+
+                Log.e(TAG, "網路錯誤 : " + E.toString());
+                runOnUiThread(() -> Toast.makeText(this, "取資料失敗，將使用本地暫存資料，並請檢察網路連線。", Toast.LENGTH_SHORT).show());
+
+                Sleep(1000);//模擬延遲
+
+                ToastMessage[0] = LoadLocalData();
+
+                Sleep(1000);//模擬延遲
             } catch (Exception E) {
                 Log.e(TAG, "取資料失敗 : " + E.toString());
                 ToastMessage[0] = "取資料失敗";
@@ -155,6 +163,34 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
+    //模擬延遲
+    void Sleep(long Millis) {
+        try {
+            Thread.sleep(Millis); // 模擬延遲，實際應用中可根據需要調整
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //讀取本地暫存資料
+    String LoadLocalData() {
+        try {
+            InputStream IS = getAssets().open("LocalData.txt");
+            BufferedReader Reader = new BufferedReader(new InputStreamReader(IS, "UTF-8"));
+            StringBuilder Builder = new StringBuilder();
+            String Line;
+            while ((Line = Reader.readLine()) != null) {
+                Builder.append(Line);
+            }
+            Reader.close();
+            ShowData(Builder.toString());
+
+            return "讀取本地暫存資料完成";
+        } catch (Exception E) {
+            Log.e(TAG, "LoadLocalData E : " + E.toString());
+            return "讀取本地暫存資料失敗";
+        }
+    }
 
     void ShowData(String Data) {
         //JsonObjectRequest Request=new JsonObjectRequest()
