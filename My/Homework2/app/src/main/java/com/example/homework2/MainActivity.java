@@ -26,6 +26,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -124,18 +125,29 @@ public class MainActivity extends AppCompatActivity {
         try {
             JSONObject Json = new JSONObject(Data);
 
-            /*ArrayAdapter<String>Adapter=new ArrayAdapter<>(
-                    this,
-                    android.R.layout.simple_list_item_1,
-                    DataList // 假設 "data" 是 JSON 中的數組
-            );*/
+            ArrayList<String> ArrayList = new ArrayList<>();
 
             JSONArray DataArray = Json.getJSONArray("data");
 
             for (int a = 0; a < DataArray.length(); a++) {
                 JSONObject Item = DataArray.getJSONObject(a);
-                Log.v(TAG, Item.toString());
+                //Log.v(TAG, Item.toString());
+
+                ArrayList.add(
+                    Item.optString("車站編號") + "\n" +
+                    Item.optString("車站中文名稱") + "\n" +
+                    Item.optString("車站緯度") + ":" + Item.optString("車站經度"));
             }
+
+            runOnUiThread(() -> {
+                ArrayAdapter<String> Adapter = new ArrayAdapter<>(
+                        this,
+                        android.R.layout.simple_list_item_1,
+                        ArrayList
+                );
+
+                DataList.setAdapter(Adapter);
+            });
         } catch (Exception E) {
             Log.e(TAG, "ShowDataError : " + E.getMessage());
         }
