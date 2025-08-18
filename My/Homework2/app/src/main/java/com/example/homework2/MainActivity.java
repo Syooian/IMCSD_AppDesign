@@ -3,6 +3,7 @@ package com.example.homework2;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -34,14 +35,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void ShowProgressBar(Boolean OnOff) {
+    //進度條
+    ProgressBar ProgressBar = findViewById(R.id.ProgressBar);
 
+    //進度條開關, 顯示進度
+    void ShowProgressBar(Boolean OnOff, Float Value) {
+        //物件開關
+        ProgressBar.setVisibility(OnOff ? View.VISIBLE : View.INVISIBLE);
+
+        if (Value != null) {
+            ProgressBar.setProgress(Value.intValue(), true);
+        }
     }
 
     //取WebAPI資料
     public void GetData(View View) {
-
-
         new Thread(() -> {
             try {
                 URL URL = new URL(API_URL);
@@ -58,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         Builder.append(Line);
                     }
                     Reader.close();
-                    Log.d(TAG, "取資料成功 : " + Builder.toString());
+                    Log.v(TAG, "取資料成功 : " + Builder.toString());
                 } else {
                     Log.e(TAG, "取資料失敗 Code : " + ResponseCode);
                 }
@@ -66,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, "取資料失敗 : " + E.toString());
                 Toast.makeText(this, "取資料失敗", Toast.LENGTH_SHORT).show();
             }
+
+            ShowProgressBar(false, null);
         }).start();
     }
 }
