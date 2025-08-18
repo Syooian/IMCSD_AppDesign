@@ -97,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
         DataList.setAdapter(null);
 
         new Thread(() -> {
+            final String[] ToastMessage = new String[1];
+            //變數在 try 區塊和 catch 區塊都可能被賦值，Java 不允許在 lambda 外部這樣重複賦值。
+            //建議改用陣列或將 ToastMessage 宣告在 try-catch 外並只賦值一次。
+
             try {
                 URL URL = new URL(API_URL);
                 HttpURLConnection Connection = (HttpURLConnection) URL.openConnection();
@@ -125,22 +129,26 @@ public class MainActivity extends AppCompatActivity {
                         Thread.sleep(1000); // 模擬延遲，實際應用中可根據需要調整
                     }
                     Reader.close();
-                    Log.v(TAG, "取資料成功 : " + Builder.toString());
+                    //Log.v(TAG, "取資料成功 : " + Builder.toString());
 
-                    runOnUiThread(() -> Toast.makeText(this, "取資料成功", Toast.LENGTH_SHORT).show());
+                    ToastMessage[0] = "取資料成功";
 
                     ShowData(Builder.toString());
 
                     //SwipeRefresh.setRefreshing(false); // 停止刷新動畫
                 } else {
                     Log.e(TAG, "取資料失敗 Code : " + ResponseCode);
+                    ToastMessage[0] = "取資料失敗";
                 }
             } catch (Exception E) {
                 Log.e(TAG, "取資料失敗 : " + E.toString());
-                Toast.makeText(this, "取資料失敗", Toast.LENGTH_SHORT).show();
+                ToastMessage[0] = "取資料失敗";
             }
 
-            runOnUiThread(() -> ShowProgressBar(false, null));
+            runOnUiThread(() -> {
+                ShowProgressBar(false, null);
+                Toast.makeText(this, ToastMessage[0], Toast.LENGTH_SHORT).show();
+            });
         }).start();
     }
 
