@@ -108,32 +108,15 @@ public class MainActivity extends AppCompatActivity {
                 if (ResponseCode == HttpURLConnection.HTTP_OK) {
                     int Total = Connection.getContentLength();
                     BufferedReader Reader = new BufferedReader(new InputStreamReader(Connection.getInputStream()));
-                    StringBuffer Builder = new StringBuffer();
-                    String Line;
-                    int Read = 0;
+                    StringBuffer Buffer = LoadString(Reader, Total);
 
-                    Log.d(TAG, "Total : " + Total);
+                    if (Buffer.length() == 0) {
+                        ToastMessage[0] = "取資料失敗";
+                    } else {
+                        ToastMessage[0] = "取資料成功";
 
-                    while ((Line = Reader.readLine()) != null) {
-                        Builder.append(Line);
-                        Read += Line.length();
-
-                        if (Total > 0) {
-                            float Progress = (Read * 100f) / Total;
-                            runOnUiThread(() -> ShowProgressBar(true, Progress));
-                        }
-
-                        Sleep(1000);//模擬延遲
+                        ShowData(Buffer.toString());
                     }
-                    Reader.close();
-                    //Log.v(TAG, "取資料成功 : " + Builder.toString());
-
-                    runOnUiThread(() -> ShowProgressBar(true, 100f));
-                    Sleep(1000);//模擬延遲
-
-                    ToastMessage[0] = "取資料成功";
-
-                    ShowData(Builder.toString());
 
                     //SwipeRefresh.setRefreshing(false); // 停止刷新動畫
                 } else {
@@ -148,9 +131,12 @@ public class MainActivity extends AppCompatActivity {
 
                 Sleep(1000);//模擬延遲
 
+                //在正常連線下，此時把裝置調成飛航模式，在刷資料時，會卡住，原因待查
+                //此時再刷一次就正常
+
                 ToastMessage[0] = LoadLocalData();
 
-                Sleep(1000);//模擬延遲
+                //Sleep(1000);//模擬延遲
             } catch (Exception E) {
                 Log.e(TAG, "取資料失敗 : " + E.toString());
                 ToastMessage[0] = "取資料失敗";
@@ -163,32 +149,72 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
 
+    //讀取本地暫存資料
+    String LoadLocalData() {
+        try {
+            InputStream IS = getAssets().open("LocalData.txt");
+            BufferedReader Reader = new BufferedReader(new InputStreamReader(IS, "UTF-8"));
+
+            //本地讀取用StringBuilder即可，但為求統一方法所以使用StringBuffer
+            StringBuffer Buffer = LoadString(Reader, 0);
+
+            Sleep(1000);
+
+            if (Buffer.length() == 0) {
+                return "讀取本地暫存資料失敗";
+            } else {
+                ShowData(Buffer.toString());
+
+                return "讀取本地暫存資料完成";
+            }
+        } catch (Exception E) {
+
+            Sleep(1500);//模擬延遲
+
+            Log.e(TAG, "LoadLocalData E : " + E.toString());
+            return "讀取本地暫存資料失敗";
+        }
+    }
+
+    StringBuffer LoadString(BufferedReader Reader, int Total) {
+        StringBuffer Buffer = new StringBuffer();
+        String Line;
+
+        int Read = 0;
+
+        Log.d(TAG, "Total : " + Total);
+
+        try {
+            while ((Line = Reader.readLine()) != null) {
+                Buffer.append(Line);
+                Read += Line.length();
+
+                if (Total > 0) {
+                    float Progress = (Read * 100f) / Total;
+                    runOnUiThread(() -> ShowProgressBar(true, Progress));
+                }
+
+                Sleep(1000);//模擬延遲
+            }
+
+            Reader.close();
+        } catch (Exception E) {
+            Log.e(TAG, "LoadString Error : " + E.toString());
+        }
+
+        runOnUiThread(() -> ShowProgressBar(true, 100f));
+        Sleep(1000);//模擬延遲
+
+        //可能需要注意如果出現Exception時 Buffer 可能會是空的
+        return Buffer;
+    }
+
     //模擬延遲
     void Sleep(long Millis) {
         try {
             Thread.sleep(Millis); // 模擬延遲，實際應用中可根據需要調整
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-    }
-
-    //讀取本地暫存資料
-    String LoadLocalData() {
-        try {
-            InputStream IS = getAssets().open("LocalData.txt");
-            BufferedReader Reader = new BufferedReader(new InputStreamReader(IS, "UTF-8"));
-            StringBuilder Builder = new StringBuilder();
-            String Line;
-            while ((Line = Reader.readLine()) != null) {
-                Builder.append(Line);
-            }
-            Reader.close();
-            ShowData(Builder.toString());
-
-            return "讀取本地暫存資料完成";
-        } catch (Exception E) {
-            Log.e(TAG, "LoadLocalData E : " + E.toString());
-            return "讀取本地暫存資料失敗";
         }
     }
 
