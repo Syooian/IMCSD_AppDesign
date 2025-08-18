@@ -19,3 +19,6 @@
 * values/colors.xml
 * values/strings.xml
 * values/themes/themes.xml
+
+# 作業二專案
+* My/Homework2
