@@ -123,27 +123,22 @@ public class MainActivity extends AppCompatActivity {
                     //SwipeRefresh.setRefreshing(false); // 停止刷新動畫
                 } else {
                     Log.e(TAG, "取資料失敗 Code : " + ResponseCode);
-                    ToastMessage[0] = "取資料失敗";
+                    ToastMessage[0] = LoadLocalData();
                 }
 
                 if (Connection != null) {
-                    Log.v(TAG,"斷開連線");
+                    Log.v(TAG, "斷開連線");
                     Connection.disconnect();
                 }
             } catch (UnknownHostException E) {
-                Sleep(1000);//模擬延遲
-
                 Log.e(TAG, "網路錯誤 : " + E.toString());
-                runOnUiThread(() -> Toast.makeText(this, "取資料失敗，將使用本地暫存資料，並請檢察網路連線。", Toast.LENGTH_SHORT).show());
-
-                Sleep(1000);//模擬延遲
 
                 ToastMessage[0] = LoadLocalData();
 
                 //Sleep(1000);//模擬延遲
             } catch (Exception E) {
                 Log.e(TAG, "取資料失敗 : " + E.toString());
-                ToastMessage[0] = "取資料失敗";
+                ToastMessage[0] = LoadLocalData();
             }
 
             runOnUiThread(() -> {
@@ -155,6 +150,12 @@ public class MainActivity extends AppCompatActivity {
 
     //讀取本地暫存資料
     String LoadLocalData() {
+        Sleep(1000);//模擬延遲
+
+        runOnUiThread(() -> Toast.makeText(this, "取資料失敗，將使用本地暫存資料，並請檢察網路連線。", Toast.LENGTH_SHORT).show());
+
+        Sleep(1000);//模擬延遲
+
         try {
             InputStream IS = getAssets().open("LocalData.txt");
             BufferedReader Reader = new BufferedReader(new InputStreamReader(IS, "UTF-8"));
