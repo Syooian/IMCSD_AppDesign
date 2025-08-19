@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:onClick="GetData"
         android:text="取WebAPI資料"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
