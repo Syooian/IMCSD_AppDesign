@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     String LoadLocalData() {
         Sleep(1000);//模擬延遲
 
-        runOnUiThread(() -> Toast.makeText(this, "取資料失敗，將使用本地暫存資料，並請檢察網路連線。", Toast.LENGTH_SHORT).show());
+        runOnUiThread(() -> Toast.makeText(this, "取資料失敗，將使用本地暫存資料，並請檢查網路連線。", Toast.LENGTH_SHORT).show());
 
         Sleep(1000);//模擬延遲
 
