@@ -59,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
             GetData(null);
             SwipeRefresh.setRefreshing(false); // 停止刷新動畫
         });
+
+        //加入清除按鈕的Click事件
+        findViewById(R.id.Btn_CleanData).setOnClickListener(V -> {
+            CleanDataList();
+            Toast.makeText(this, "資料已清除", Toast.LENGTH_SHORT).show();
+        });
     }
 
     //進度條
@@ -91,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         ShowProgressBar(true, 0f);
 
         //清空已顯示的資料
-        DataList.setAdapter(null);
+        CleanDataList();
 
         new Thread(() -> {
             final String[] ToastMessage = new String[1];
@@ -284,6 +290,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //清除畫面上的資料
+    void CleanDataList() {
+        DataList.setAdapter(null);
+    }
 
     class StationAdapter extends ArrayAdapter<HashMap<String, String>> {
         public StationAdapter(Context Context, ArrayList<HashMap<String, String>> Stations) {
@@ -306,11 +316,11 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-class Station {
+/*class Station {
     public int seq;
     public String 車站編號;
     public String 車站中文名稱;
     public String 車站英文名稱;
     public String 車站緯度;
     public String 車站經度;
-}
+}*/

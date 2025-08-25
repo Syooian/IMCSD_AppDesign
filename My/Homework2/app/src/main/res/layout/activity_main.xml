@@ -7,16 +7,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/Btn_GetData"
+    <LinearLayout
+        android:id="@+id/ButtonLinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="GetData"
-        android:text="取WebAPI資料"
-        android:textAllCaps="false"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/Btn_GetData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:onClick="GetData"
+            android:text="取WebAPI資料"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/Btn_CleanData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="清除資料"
+            android:textAllCaps="false" />
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/ProgressBar"
@@ -26,7 +42,7 @@
         android:max="100"
         android:progress="0"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/Btn_GetData" />
+        app:layout_constraintTop_toBottomOf="@id/ButtonLinearLayout" />
 
     <ProgressBar
         android:id="@+id/Loading"
